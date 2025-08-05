@@ -1,0 +1,19 @@
+name: Java_Maven_YML
+description: This is Java_Maven_YML sample
+version: 1.0
+settings:
+  build-steps:
+    - name: Install & Test
+      key: runner_cmd
+      disabled: false
+      workDir: ''
+      args:
+        commands: |-
+          mvn clean install
+          mvn test
+  artifacts:
+    - name: Files
+      condition: buildSucceeds
+      paths:
+        - src/main
+        - src/test
