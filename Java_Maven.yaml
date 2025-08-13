@@ -1,0 +1,34 @@
+name: Java_Maven_App_Private
+description: ""
+settings:
+  vcs-steps:
+  - key: vcs_git
+    name: vcs
+    disabled: false
+    args:
+      authType: pat
+      branch: main
+      url: https://github.com/B1Ninja/Java_Maven_App.git
+      username: abheekm
+    argsProtected:
+      password: '#bn_protected#ZvX/QUTOGNZpgYnHn/9wRGsap2oU+L8xqQJP2xNQa6o7mab677i5OcxO1uoWfGiC8o3S3JpRm/dON/oycxedeAeQQn4='
+  build-steps:
+  - key: runner_cmd
+    name: Install
+    disabled: false
+    workDir: ""
+    args:
+      commands: mvn clean install
+    argsProtected: {}
+  - key: runner_cmd
+    name: Test
+    disabled: false
+    workDir: ""
+    args:
+      commands: mvn test
+    argsProtected: {}
+  artifacts:
+  - name: Sample
+    condition: buildSucceeds
+    paths:
+    - '*'
