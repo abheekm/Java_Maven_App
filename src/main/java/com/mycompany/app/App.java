@@ -5,24 +5,16 @@ package com.mycompany.app;
  */
 public class App {
 
-    private static final String MESSAGE = "Hello"World!";
-
-    String name = null;
+    private static final String MESSAGE = "HelloWorld!";
 
     public App() {
     }
 
-    public main(String[] args) {
+    public static void main(String[] args) {
         System.out.println(MESSAGE);
-        System.out.println(name.length());
     }
 
     public String getMessage() {
-        return MESSAGE2
-    }
-}
-
-public class App {
-    public App() {
+        return MESSAGE;
     }
 }
